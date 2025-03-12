@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "25176ceb-7f1b-4117-a5dc-823562f697d7",
+		"name": "OneBalance Demo API Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30934110"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Local Supported Chains",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/chains/list",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"chains",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Assets List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/assets/list",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"assets",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Balances Query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/balances/aggregated-balance?address=0x254d2001dE21fe8e633000EB15698291E162c3E1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"balances",
+						"aggregated-balance"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "0x254d2001dE21fe8e633000EB15698291E162c3E1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Balances Query Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/balances/aggregated-balance?address=0xbEd2f7343781EEfd4c206Ff436AC598Ba5C7c146",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"balances",
+						"aggregated-balance"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "0xbEd2f7343781EEfd4c206Ff436AC598Ba5C7c146"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Predict Account Address",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "42bb629272001ee1163ca0dbbbc07bcbb0ef57a57baf16c4b1d4672db4562c11",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sessionAddress\": \"0x1cBFbFd62a276BF6D79d504eA4CA75a7baDcf5b1\",\n  \"adminAddress\": \"0xc162a3cE45ad151eeCd0a5532D6E489D034aB3B8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/account/predict-address",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"account",
+						"predict-address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Swap Quote Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "42bb629272001ee1163ca0dbbbc07bcbb0ef57a57baf16c4b1d4672db4562c11",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"account\": {\n    \"sessionAddress\": \"0xa691076B413848681c88F07038E50722d326B56F\",\n    \"adminAddress\": \"0xa691076B413848681c88F07038E50722d326B56F\",\n    \"accountAddress\": \"0x254d2001dE21fe8e633000EB15698291E162c3E1\"\n  },\n  \"fromTokenAmount\": \"800000000000000\",\n  \"fromAggregatedAssetId\": \"ds:eth\",\n  \"toAggregatedAssetId\": \"ds:usdc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/quotes/swap-quote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quotes",
+						"swap-quote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status Sample Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "42bb629272001ee1163ca0dbbbc07bcbb0ef57a57baf16c4b1d4672db4562c11",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/status/get-tx-history?user=0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"status",
+						"get-tx-history"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
