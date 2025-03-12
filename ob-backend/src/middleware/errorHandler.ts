@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { clog, flog } from '../log';
+import { blog, clog, flog } from '../log';
 
 export class AppError extends Error {
   constructor(public statusCode: number, message: string) {
@@ -21,7 +21,7 @@ export const errorHandler = (
     });
   }
 
-  clog.error('Unhandled error:', err);
+  clog.error('Unhandled error:', err.message);
   flog.error('Unhandled error:', err);
   return res.status(500).json({
     status: 'error',

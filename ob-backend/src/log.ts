@@ -10,6 +10,8 @@ const fileRotateTransport = new winston.transports.DailyRotateFile({
   maxFiles: '14d',
 });
 
+
+// ConsoleLOG: Log to console only
 export const clog = createLogger({
   level: currentConfig.logLevel || 'info',
   format: format.combine(format.timestamp(), format.json()),
@@ -17,8 +19,17 @@ export const clog = createLogger({
     new transports.Console()
   ]
 });
+
+// FileLOG: Log to file only
 export const flog = createLogger({
   level: currentConfig.logLevel || 'info',
   format: format.combine(format.timestamp(), format.json()),
   transports: [fileRotateTransport]
+});
+
+// BothLOG : LOG TO BOTH CONSOLE AND FILE
+export const blog = createLogger({
+  level: currentConfig.logLevel || 'info',
+  format: format.combine(format.timestamp(), format.json()),
+  transports: [fileRotateTransport, new transports.Console(),]
 });

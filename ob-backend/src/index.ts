@@ -4,9 +4,11 @@ import morganBody from "morgan-body";
 import bodyParser from "body-parser";
 import cors from "cors";
 import { errorHandler } from './middleware/errorHandler';
+import fs from 'fs';
 import { BindRoutes } from './routes/api.routes';
 import { currentConfig } from './config';
-import { clog, flog } from './log';
+import { blog, flog } from './log';
+import path from 'path';
 
 // Configure middleware
 const app = express();
@@ -15,7 +17,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 if (currentConfig.logLevel === 'debug') {
-  morganBody(app, { logAllReqHeader: true, maxBodyLength: 5000 });
+  // const mlog = fs.createWriteStream(
+  //   path.join(__dirname, "logs", "express.log"), { flags: "a" }
+  // );
+  // morganBody(app, { logAllReqHeader: true, maxBodyLength: 5000, stream: mlog });
 }
 
 // Health check endpoint
@@ -33,14 +38,12 @@ setupOneBalance(currentConfig)
     app.locals.oneBalanceApi = service;
 
     const server = app.listen(currentConfig.port, () => {
-      clog.debug(`Server running on port ${currentConfig.port}`);
-      flog.debug(`Server running on port ${currentConfig.port}`);
+      blog.debug(`Server running on port ${currentConfig.port}`);
     });
 
     const shutdown = () => {
       server.close(() => {
-        clog.debug('Server shutting down');
-        flog.debug('Server shutting down');
+        blog.debug('Server shutting down');
         process.exit(0);
       });
     };
@@ -49,7 +52,6 @@ setupOneBalance(currentConfig)
     process.on('SIGINT', shutdown);
   })
   .catch((error) => {
-    clog.error('Failed to initialize OneBalance:', error);
-    flog.error('Failed to initialize OneBalance:', error);
+    blog.error('Failed to initialize OneBalance:', error);
     process.exit(1);
   }); 
