@@ -1,4 +1,3 @@
-So far, progress is:
 
 - I have been trying to get the following working:
   - Building a React app from scratch using the Privy SDK from https://docs.privy.io/guide/react/quickstart
