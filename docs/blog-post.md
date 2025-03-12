@@ -32,14 +32,14 @@ In summary; without Atomic Swaps, if an entity owned assets of one chain and wan
 A Cross-Chain Swap avoids incurring these overheads by using a Smart Contract to achieve the same result, i.e. swapping an asset on one chain for an asset on another. 
 
 ### Implementation
-One Balance is integrated with the Privy platform [https://docs.privy.io/](https://docs.privy.io/) which aloows for smoother user onboarding and provides smart wallet infrastructure. 
+One Balance is integrated with the Privy platform [https://docs.privy.io/](https://docs.privy.io/) which allows for smoother user onboarding and provides smart wallet infrastructure. 
 
 To implement an Atomic Swap, we first need to get set up in the One Balance environment, using Privy for key storage and authentication. 
 
 - Creating an App 
 - Integrating the Privy login features 
 
-Once we are set up with the Privy features integrated into our app, we can log into the app using our chosen method (email, social, or using an existing wallet). ONe we have done othis, we need to supply some funds to this OneBalance account in order to pay for the gas we will need to execute our operations.
+Once we are set up with the Privy features integrated into our app, we can log into the app using our chosen method (email, social, or using an existing wallet). Once we have done this, we need to supply some funds to this OneBalance account in order to pay for the gas we will need to execute our operations.
 
 Once we have signed in to our application, generated a OneBalance account key, and funded this account, we can perform a Cross Asset Swap. This means:
 - Calling the OneBalance API to generate a swap quote
@@ -47,7 +47,8 @@ Once we have signed in to our application, generated a OneBalance account key, a
 - Executing the signed quote with the OneBalance API 
 
 ### The OneBalance API
-The One Balance API  is a series of endpoints to help you integrate your dApp seamlessly wiith the OneBalance platform. 
+The One Balance API  is a series of endpoints to help you integrate your dApp seamlessly with the OneBalance platform. 
+
 - API definitions may be found here-[https://be.onebalance.io/swagger/#/](https://be.onebalance.io/swagger/#/).
 - One Balance documentation may be found here- [https://docs.onebalance.io/chain-abstraction-toolkit/getting-started-with-onebalance-and-privy](https://docs.onebalance.io/chain-abstraction-toolkit/getting-started-with-onebalance-and-privy)
 
