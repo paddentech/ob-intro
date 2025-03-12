@@ -24,7 +24,7 @@ The `docs` folder contains documentation related to the project. This includes a
 - Configure the API key in these files to reflect your OneBalance API key
 
 - run npm install in the ob-backend directory
-- run pnpm install in the ob-client directory
+- run npm install in the ob-client directory
 Alternatively, run the setup.sh file in the root directory to run both these commands
 
 
