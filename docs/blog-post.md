@@ -34,13 +34,17 @@ A Cross-Chain Swap avoids incurring these overheads by using a Smart Contract to
 ### Implementation
 One Balance is integrated with the Privy platform [https://docs.privy.io/](https://docs.privy.io/) which aloows for smoother user onboarding and provides smart wallet infrastructure. 
 
-To implement an Atomic Swap, we first need to get set up in the One Balance environment, using Privy for key storage and authentication. This means
+To implement an Atomic Swap, we first need to get set up in the One Balance environment, using Privy for key storage and authentication. 
 
 - Creating an App 
 - Integrating the Privy login features 
+
+Once we are set up with the Privy features integrated into our app, we can log into the app using our chosen method (email, social, or using an existing wallet). ONe we have done othis, we need to supply some funds to this OneBalance account in order to pay for the gas we will need to execute our operations.
+
+Once we have signed in to our application, generated a OneBalance account key, and funded this account, we can perform a Cross Asset Swap. This means:
 - Calling the OneBalance API to generate a swap quote
 - Signing the quote using Privy
-- Executing the wuote with the signature 
+- Executing the signed quote with the OneBalance API 
 
 ### The OneBalance API
 The One Balance API  is a series of endpoints to help you integrate your dApp seamlessly wiith the OneBalance platform. 

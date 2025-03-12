@@ -1,7 +1,13 @@
 # ob-intro
 Worked test for One Balance recruitment process. 
 
-# One Balance Intro
+## Elements
+- Blog Post: see [./docs/blog-post.md](docs/blog-post.md)
+- App: this is done in two parts: 
+  - An Express service app which handles the calls to the OneBalance API [here](./ob-backend/README.md)
+  - A React app which acts as a UI for this, [here](./ob-client/README.md). 
+- There are also some implementation notes in the [./docs/notes.md](./docs/notes.md) file.  
+
 
 ## Folder structure
 
